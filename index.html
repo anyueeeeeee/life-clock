@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how much life have you lived?</title>
+    <script src="redirect.js"></script>
+    <link rel="stylesheet" href="style-desktop.css">
+    <script src="audio-player.js"></script>
+</head>
+<body style="background-color: #e5e4e0;">
+    <header class="header">
+        <div class="header-left">
+            <img src="icons/rt_logo.png" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <img id="playPauseButton" src="icons/pausebutton.png" alt="Play/Pause Button">
+            <a href="#section3" class="refreshBtn">ABOUT</a>
+            &nbsp; &nbsp;
+            <a href="#section1" class="refreshBtn">HOME</a>
+        </div>
+        <div class="vertical-text-left">
+            <span class="left-text">LIFE&nbsp;&nbsp;CLOCK</span>
+        </div>
+    
+        <div class="bottom-text-left">
+            <span class="left-text-bottom">inspired by scott thrift and vasily betin</span>
+        </div>
+    
+        <div class="vertical-text-right">
+            <span class="right-text">based on four thousand weeks, by oliver burkeman</span>
+        </div>
+    
+    </header>
+
+    <div class="section" id="section1">
+        <h1>the human lifespan is comically short.</h1>
+        <h4>if you live to 78, you have around 4000 weeks.</h4>
+        <button class="button" data-target="#section2">SEE YOUR LIFE IN WEEKS →</button>
+    </div>
+
+    <div class="section" id="section2">
+        <div class="center-container">
+            <div class="main-text">
+                <h1>your life in weeks</h1>
+                <div class="input_wrap">
+                    <input type="date" id="date_input" name="dob">
+                    <button class="ageButton">&nbsp;CALCULATE →&nbsp;</button>
+                </div>
+    
+                <div class="weeks-container">
+                    <div>
+                        <div>
+                            <span id="weeksLived">
+                                -
+                            </span>
+                            <p> WEEKS LIVED </p>
+                        </div>
+                    </div>
+            
+                    <div>
+                        <div>
+                            <span id="weeksLeft">
+                                -
+                            </span>
+                            <p> WEEKS LEFT </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="button" data-target="#section3">FOOD FOR THOUGHT →</button>
+            </div>
+    
+            <div class="life-circle">
+                <div class="circle">
+                    <span id="lifeLived">
+                       -
+                    </span>
+                    <h2>life lived</h2>
+                </div>
+    
+                <svg class="circle-svg" width="300" height="300" viewBox="0 0 300 300">
+                    <defs>
+                        <!-- Define a circular path with a larger radius to match the life lived circle, help from chatGPT -->
+                        <path id="text-circle" d="M 150, 150 m -125, 0 a 125,125 0 1,1 250,0 a 125,125 0 1,1 -250,0" />
+                    </defs>
+                    <text class="circular-text">
+                        <textPath href="#text-circle" startOffset="25%">
+                            · what are you going to do with your remaining sunrises? ·
+                        </textPath>
+                    </text>
+                </svg>
+    
+                <svg class="progress-circle" width="300" height="300" viewBox="0 0 300 300">
+                    <circle class="progress-stroke" cx="150" cy="150" r="140" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="section3">
+        <h1 id="dynamic-text">what are you going to do with your remaining sunrises?</h1>
+        <h4>since we have not experienced death, we cannot truly fear it. even in our imagined deaths, we are still acting spectators. we go on about our days as if we are immortal, and it is through this denial of death that we constrict ourselves. modern society’s obsession with lengthening to-do lists is bizarre. we’ve even rebranded this incessant busyness as “hustling,” a lifestyle choice worth boasting about on social media.</h4> 
+        <h4>an easy life is not equivalent to a simple one, and to want little is, in fact, much. with 4000 weeks, i still have snow to touch, wind to feel, love to exist in, and apologies to give. once we embrace the certainty of death, we can finally live.</h4>
+        <h4>the world is full of wonder, and i hope you get to experience more of it.</h4>
+    </div>
+
+    <footer class="footer">
+        <span class="footer-left">we're not actually given 4000 weeks, or even one week</span>
+        <span class="footer-right">we only get one moment after another</span>
+    </footer>
+
+        <!-- jae kim gradient shader, minor edits -->
+        <!-- <canvas class="my-canvas"></canvas>		
+        <script type="module">
+          import {sculptToMinimalRenderer} from 'https://unpkg.com/shader-park-core/dist/shader-park-core.esm.js';
+          import {spCode} from './spCode.js';
+          let canvas = document.querySelector('.my-canvas');
+                      let state = {
+            buttonHover: 0.0,
+            currButtonHover: 0.0,
+            click: 0.0,
+            currClick: 0.0
+          };
+    
+          // This converts your Shader Park code into a shader and renders it to the my-canvas element
+          sculptToMinimalRenderer(canvas, spCode, () => {
+            state.currButtonHover = state.currButtonHover*.999 + state.buttonHover*.001;
+            state.currClick = state.currClick*.92 + state.click*.08;
+            return {
+              'buttonHover' : state.currButtonHover,
+              'click' : state.currClick
+            };
+          });
+                
+          // This converts your Shader Park code into a shader and renders it to the my-canvas element
+          // sculptToMinimalRenderer(canvas, spCode, () => ({mousePress: 0}));
+        </script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="app-desktop.js"></script>
+</body>
+</html>
