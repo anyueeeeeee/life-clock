@@ -1,6 +1,29 @@
 //1. Make sure the page loads first
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     // console.log("Page has loaded");
+
+    const dateInput = document.getElementById("date_input");
+
+    if (dateInput) {
+        // Function to set today's date in the correct format for type="date"
+        const setTodayAsDefault = () => {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+            const dd = String(today.getDate()).padStart(2, "0");
+
+            // Set the value to today's date
+            dateInput.value = `${yyyy}-${mm}-${dd}`;
+        };
+
+        // Call the function to set the value
+        setTodayAsDefault();
+
+        // Debug log to ensure the value is set correctly
+        console.log("Date input value set to:", dateInput.value);
+    } else {
+        console.error("date_input element not found");
+    }
 
     let audioPlayer;
     let isPlaying = true;
@@ -12,14 +35,14 @@ window.addEventListener('load', function () {
         audioPlayer.autoplay = true;
         document.body.appendChild(audioPlayer);
     }
-    
+
     // Check if the audio player already exists
     if (!document.getElementById("persistent-audio")) {
         createAudioPlayer();
     }
 
     const playPauseButton = document.getElementById("playPauseButton");
-    
+
     playPauseButton.addEventListener("click", function () {
         if (!audioPlayer) createAudioPlayer(); // Ensure the audio player is created
         if (isPlaying) {
@@ -42,7 +65,7 @@ window.addEventListener('load', function () {
 
         const currentDate = new Date();
         const differenceInTime = currentDate - inputDate;
-        
+
         // Calculate total days lived
         const daysLived = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
         const weeksLived = Math.floor(daysLived / 7);
@@ -61,8 +84,10 @@ window.addEventListener('load', function () {
         updateProgressCircle(lifeLived);
 
         // Dispatch custom event
-        window.weeksLivedGlobal = weeksLived; 
-        window.dispatchEvent(new CustomEvent('weeksLivedUpdated', { detail: weeksLived }));
+        window.weeksLivedGlobal = weeksLived;
+        window.dispatchEvent(
+            new CustomEvent("weeksLivedUpdated", { detail: weeksLived }),
+        );
     }
 
     function updateCircularText(daysLeft) {
@@ -82,14 +107,16 @@ window.addEventListener('load', function () {
     }
 
     const buttons = document.querySelectorAll(".button");
-    buttons.forEach(button => {
-        button.addEventListener("click", function() {
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
             const targetSection = button.getAttribute("data-target");
             if (targetSection) {
-                document.querySelector(targetSection).scrollIntoView({ behavior: "smooth" });
+                document
+                    .querySelector(targetSection)
+                    .scrollIntoView({ behavior: "smooth" });
             }
         });
-    }); 
+    });
 
     const ageButton = document.querySelector(".ageButton");
     if (ageButton) {
