@@ -1,6 +1,6 @@
 
-run = "node sketch.js"
+run = "npx http-server -p 3000"
 modules = ["nodejs-20", "web"]
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-23_11"
