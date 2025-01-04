@@ -2,6 +2,20 @@
 window.addEventListener("load", function () {
     // console.log("Page has loaded");
 
+    // Function to adjust section height dynamically
+    function adjustSectionHeight() {
+        const sections = document.querySelectorAll(".section");
+        const viewportHeight = window.innerHeight; // Gets the visible viewport height
+
+        sections.forEach((section) => {
+            section.style.height = `${viewportHeight}px`; // Set each section's height dynamically
+        });
+    }
+
+    // Adjust section height on load and resize
+    adjustSectionHeight(); // Initial adjustment
+    window.addEventListener("resize", adjustSectionHeight); // Adjust on resize
+
     const dateInput = document.getElementById("date_input");
 
     if (dateInput) {
@@ -92,7 +106,7 @@ window.addEventListener("load", function () {
 
     function updateCircularText(daysLeft) {
         const textPath = document.querySelector(".circular-text textPath");
-        textPath.textContent = `· what are you going to do with your ${daysLeft} remaining sunrises? ·`;
+        // textPath.textContent = `· what are you going to do with your ${daysLeft} remaining sunrises? ·`;
         let textElement = document.getElementById("dynamic-text");
         textElement.textContent = `what are you going to do with your ${daysLeft} remaining sunrises?`;
     }

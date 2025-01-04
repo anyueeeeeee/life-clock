@@ -1,8 +1,9 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100%;
+    height: 100svh;
     scroll-behavior: smooth;
     font-size: 12px;
     background-color: transparent;
@@ -12,19 +13,19 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; 
-    height: 100%; 
-    z-index: -1; 
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
 }
 
 header {
-    position: fixed; 
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 1000;
     padding: 1rem;
     margin-top: 0.5rem;
@@ -59,12 +60,12 @@ header {
 .vertical-text-right {
     position: fixed;
     bottom: 9rem;
-    right: -3.3rem;
+    right: -3.5rem;
     font-family: "Open Sans";
     font-weight: 300;
     font-style: italic;
     color: #6a6a69;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: left;
     transform: rotate(-270deg);
 }
@@ -72,7 +73,7 @@ header {
 #playPauseButton {
     height: 2rem;
     vertical-align: center;
-    padding-right: 1rem;
+    padding-right: 1.1rem;
     flex-shrink: 0;
 }
 
@@ -100,7 +101,7 @@ h4 {
     text-align: center;
     font-family: "Open Sans";
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 0rem;
     margin-top: 1.5rem;
 }
@@ -109,12 +110,12 @@ p {
     text-align: center;
     font-family: "Open Sans";
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-bottom: 1rem;
 }
 
 .section {
-    height: 100vh;
+    height: 100svh;
     width: 80vw;
     margin: 0 auto;
     display: flex;
@@ -148,7 +149,7 @@ p {
 
 #date_input {
     padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "Open Sans";
     font-weight: 300;
     display: inline-flex;
@@ -161,7 +162,7 @@ p {
 }
 
 #date_input::placeholder {
-    color:black;
+    color: black;
 }
 
 .life-circle {
@@ -172,7 +173,10 @@ p {
     height: 300px;
 }
 
-.circle, .back-circle, .circle-svg, .progress-circle {
+.circle,
+.back-circle,
+.circle-svg,
+.progress-circle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -233,7 +237,7 @@ p {
     fill: #6a6a69;
     font-family: "Open Sans";
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transform-origin: 150px 150px;
     animation: rotateText 30s linear infinite;
     transform-origin: center;
@@ -282,7 +286,7 @@ p {
 
 .button {
     padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "Open Sans";
     font-weight: 300;
     outline: 0;
@@ -291,7 +295,8 @@ p {
     background: transparent;
     border: 0.9px solid black;
     border-radius: 4px;
-    display: inline-flex; /* button only takes up space of text */
+    display: inline-flex;
+    /* button only takes up space of text */
     justify-content: center;
     line-height: 1.5;
     transition: all .14s ease-out;
@@ -309,12 +314,12 @@ p {
     font-family: "Open Sans";
     font-weight: 300;
     color: black;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .ageButton {
     padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "Open Sans";
     font-weight: 300;
     color: white;
@@ -324,7 +329,8 @@ p {
     background: #6a6a69;
     border: 0.9px solid #6a6a69;
     border-radius: 4px;
-    display: inline-flex; /* button only takes up space of text */
+    display: inline-flex;
+    /* button only takes up space of text */
     justify-content: center;
     line-height: 1.5;
     transition: all .14s ease-out;
@@ -340,18 +346,18 @@ p {
 }
 
 .footer {
-    position: fixed; 
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 1000;
     padding: 1.6rem;
     margin-top: 0.3rem;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "Open Sans";
     font-weight: 300;
     font-style: italic;
