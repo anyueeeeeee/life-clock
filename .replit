@@ -1,3 +1,5 @@
+
+run = "python3 sketch.js"
 modules = ["nodejs-20", "web"]
 
 [nix]
